@@ -118,45 +118,45 @@ static const GimpActionEntry file_actions[] =
 static const GimpEnumActionEntry file_save_actions[] =
 {
   { "file-save", GTK_STOCK_SAVE,
-    NC_("file-action", "_Save"), "<primary>S",
-    NC_("file-action", "Save this image"),
+    NC_("file-action", "Write _XCF"), "<primary>E",
+    NC_("file-action", "Save this image in XCF format"),
     GIMP_SAVE_MODE_SAVE, FALSE,
     GIMP_HELP_FILE_SAVE },
 
   { "file-save-as", GTK_STOCK_SAVE_AS,
-    NC_("file-action", "Save _As..."), "<primary><shift>S",
-    NC_("file-action", "Save this image with a different name"),
+    NC_("file-action", "Write XCF _As..."), "<primary><shift>E",
+    NC_("file-action", "Save this image in XCF format with a different name"),
     GIMP_SAVE_MODE_SAVE_AS, FALSE,
     GIMP_HELP_FILE_SAVE_AS },
 
   { "file-save-a-copy", NULL,
-    NC_("file-action", "Save a Cop_y..."), NULL,
+    NC_("file-action", "Write an XCF Cop_y..."), NULL,
     NC_("file-action",
-        "Save a copy of this image, without affecting the source file (if any) or the current state of the image"),
+        "Save a copy of this image in XCF format, without affecting the source file (if any) or the current state of the image"),
     GIMP_SAVE_MODE_SAVE_A_COPY, FALSE,
     GIMP_HELP_FILE_SAVE_A_COPY },
 
   { "file-save-and-close", NULL,
-    NC_("file-action", "Save and Close..."), NULL,
-    NC_("file-action", "Save this image and close its window"),
+    NC_("file-action", "Write XCF and Close..."), NULL,
+    NC_("file-action", "Save this image in XCF format and close its window"),
     GIMP_SAVE_MODE_SAVE_AND_CLOSE, FALSE,
     GIMP_HELP_FILE_SAVE },
 
   { "file-export-to", NULL,
-    NC_("file-action", "Export to"), "<primary>E",
-    NC_("file-action", "Export the image again"),
+    NC_("file-action", "Save again"), "<primary><shift>S",
+    NC_("file-action", "Save the image again"),
     GIMP_SAVE_MODE_EXPORT_TO, FALSE,
     GIMP_HELP_FILE_EXPORT_TO },
 
   { "file-overwrite", NULL,
     NC_("file-action", "Over_write"), "",
-    NC_("file-action", "Export the image back to the imported file in the import format"),
+    NC_("file-action", "Overwrite the original file in its format"),
     GIMP_SAVE_MODE_OVERWRITE, FALSE,
     GIMP_HELP_FILE_OVERWRITE },
 
   { "file-export", NULL,
-    NC_("file-action", "Export..."), "<primary><shift>E",
-    NC_("file-action", "Export the image to various file formats such as PNG or JPEG"),
+    NC_("file-action", "Save..."), "<primary>S",
+    NC_("file-action", "Save the image"),
     GIMP_SAVE_MODE_EXPORT, FALSE,
     GIMP_HELP_FILE_EXPORT }
 };
