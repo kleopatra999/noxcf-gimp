@@ -35,6 +35,3 @@ fork will also help differentiate the forked version from the mainline GIMP.
 However, changing the name will involve a lot of work throughout the
 package, and I'm not sure what the new name should be, so it is at present a
 lower priority than fixing "Save."
-
-(Sorry the actual code isn't here yet - I'm still downloading the original
-from the GIMP server.  This is a very new project!)
