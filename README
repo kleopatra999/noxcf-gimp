@@ -1,97 +1,40 @@
-                   ------------------------------ 
-                   GNU Image Manipulation Program
-                         2.8 Stable Branch
-                   ------------------------------
+noxcf-gimp
+==========
 
-GIMP 2.8 replaces earlier GIMP 2.x versions. It is advised that you
-uninstall them before installing GIMP 2.8. If you want to keep your
-older GIMP 2.x installation in parallel to GIMP 2.8, you have to
-choose a separate prefix which is not in your default library search
-path. Otherwise your prevoius GIMP installation will start to use the
-new libraries. You have been warned.
+A version of GIMP modified to support popular file formats as first-class
+destinations for "Save"
 
-If you think you found a bug in this version, please make sure that it
-hasn't been reported earlier and that it is not just new stuff that is
-still being worked on and obviously not quite finished yet.
+Version 2.8 of GIMP introduces (in the "stable" development stream - several
+previous development versions apparently also had it) a drastic change in
+the user interface philosophy of the GNU Image Manipulation Program.  Where
+GIMP was formerly a general image file editor, it is now an XCF editor with
+the ability to import and export other formats.  The common use case of
+loading a file in a format like PNG, editing it, and saving it back to PNG,
+now involves several extra steps and a factually incorrect "You have unsaved
+changes" warning at the end.  As a deliberate design decision, XCF-centred
+workflows are now the norm with any workflow not centred on XCF penalized. 
+Because this change was made deliberately for important philosophical
+reasons, it seems unlikely to be reversed in future versions of mainline
+GIMP.  It is, nonetheless, a showstopper for some users who might otherwise
+wish to use GIMP.
 
-If you want to hack on GIMP, please read the file HACKING. For
-detailed installation instructions, see the file INSTALL.
+This is a forked version of GIMP intended to be an editor for general image
+file formats with XCF treated as no different from the others.  In the short
+term, because it is important to have something that works at all very
+soon, it is possible that this version may have XCF support simply disabled;
+but the longer-term goal is for XCF to be supported at the same status as
+other formats.  Just not rammed down the users' throats.
 
+Forking the package would also be a good opportunity to change the name from
+the word "GIMP," which is understood in many communities as as slur against
+disabled persons or as a reference to BDSM practices, to something less
+likely to cause offence.  The name alone is a showstopper for the use of
+GIMP in some corporate environments, and GIMP's development team have made
+clear they are unlikely to stop using this name.  Changing the name in the
+fork will also help differentiate the forked version from the mainline GIMP. 
+However, changing the name will involve a lot of work throughout the
+package, and I'm not sure what the new name should be, so it is at present a
+lower priority than fixing "Save."
 
-1. Web Resources
-================
-
-GIMP's home page is at:
-
-	http://www.gimp.org/
-
-Please be sure to visit this site for information, documentation,
-tutorials, news, etc.  All things GIMP-ish are available from there.
-
-The automated plug-in registry is located at:
-
-	http://registry.gimp.org/
-
-There you can get the latest versions of plug-ins, using a convenient
-forms-based interface.
-
-The latest version of GIMP can be found at:
-
-	http://www.gimp.org/downloads/
-
-
-2. Mailing Lists
-================
-
-We have several mailing lists dedicated to GIMP user and development
-discussion.  There is more info at
-
-	http://www.gimp.org/mail_lists.html
-
-Links to several archives of the mailing lists are included in that page.
-
-Gimp-user-list is a mailing list dedicated to user problems, hints and
-tips, discussion of cool effects, etc.  Gimp-developer-list is oriented
-to GIMP core and plug-in developers.  Most people will only want to be
-subscribed to gimp-user-list. If you want to help develop GIMP, the
-gimp-developer mailing list is a good starting point.
-
-
-3. IRC
-======
-
-And finally, for the real junkies, there is an IRC channel devoted to
-GIMP. On GIMPNet (a private free software oriented network) there is
-#gimp.  Many of the developers hang out there.  Some of the GIMPNet
-servers are:
-
-	irc.gimp.org:6667
-	irc.us.gimp.org:6667
-	irc.eu.gimp.org:6667
-
-
-4. Customizing
-==============
-
-The look of GIMP's interface can be customized like any other GTK app
-by editing the ~/.gtkrc-2.0 file or by using "themes" (ready-made
-customizations).  For downloadable themes and further details, see
-http://art.gnome.org/themes/gtk2 . Additionally, GIMP reads the file
-~/.gimp-2.8/gtkrc so you can have settings that only apply to GIMP.
-
-Included is a set of keybindings similar to those in Adobe Photoshop.
-You can find them in the ps-menurc file.  To use them, copy this file
-to ~/.gimp-2.8/menurc. You can also manually change the keybindings to
-any of your choice by editing ~/.gimp-2.8/menurc.
-
-
-Have fun,
-
-  Spencer Kimball
-  Peter Mattis
-  Federico Mena
-  Manish Singh
-  Sven Neumann
-  Michael Natterer
-  Dave Neary
-  Martin Nordholts
+(Sorry the actual code isn't here yet - I'm still downloading the original
+from the GIMP server.  This is a very new project!)
