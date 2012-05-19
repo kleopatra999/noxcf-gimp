@@ -102,8 +102,8 @@ file_save_dialog_new (Gimp     *gimp,
     {
       dialog = gimp_file_dialog_new (gimp,
                                      GIMP_FILE_CHOOSER_ACTION_EXPORT,
-                                     _("Export Image"), "gimp-file-export",
-                                     _("_Export"),
+                                     _("Save Image"), "gimp-file-export",
+                                     _("_Save"),
                                      GIMP_HELP_FILE_EXPORT);
 
       state = g_object_get_data (G_OBJECT (gimp), "gimp-file-export-dialog-state");
@@ -190,7 +190,7 @@ file_save_dialog_response (GtkWidget *save_dialog,
                                        uri,
                                        save_proc,
                                        GIMP_RUN_INTERACTIVE,
-                                       ! dialog->save_a_copy && ! dialog->export,
+                                       ! dialog->save_a_copy,
                                        FALSE,
                                        dialog->export,
                                        FALSE))
@@ -553,27 +553,8 @@ file_save_dialog_unknown_ext_msg (GimpFileDialog *dialog,
                          basename,
                          NULL);
 
-  if (dialog->export && proc_in_other_group)
-    {
       gimp_message (gimp, G_OBJECT (dialog), GIMP_MESSAGE_WARNING,
-                    _("You can use this dialog to export to various file formats. "
-                      "If you want to save the image to the GIMP XCF format, use "
-                      "File→Save instead."));
-    }
-  else if (! dialog->export && proc_in_other_group)
-    {
-      gimp_message (gimp, G_OBJECT (dialog), GIMP_MESSAGE_WARNING,
-                    _("You can use this dialog to save to the GIMP XCF "
-                      "format. Use File→Export to export to other file formats."));
-    }
-  else
-    {
-      gimp_message (gimp, G_OBJECT (dialog), GIMP_MESSAGE_WARNING,
-                    _("The given filename does not have any known "
-                      "file extension. Please enter a known file "
-                      "extension or select a file format from the "
-                      "file format list."));
-    }
+                    _("The given filename does not have an appropriate extension for this command."));
 }
 
 static gboolean
