@@ -15,6 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#if 0
+
 #include "config.h"
 
 #include <gegl.h>
@@ -171,3 +173,5 @@ gimp_drawable_foreground_extract_siox_done (SioxState *state)
 
   siox_done (state);
 }
+
+#endif

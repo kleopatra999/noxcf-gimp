@@ -372,7 +372,8 @@ gimp_edit_clear (GimpImage    *image,
                  GimpDrawable *drawable,
                  GimpContext  *context)
 {
-  GimpRGB background;
+  GimpRGB              background;
+  GimpLayerModeEffects paint_mode;
 
   g_return_val_if_fail (GIMP_IS_IMAGE (image), FALSE);
   g_return_val_if_fail (GIMP_IS_DRAWABLE (drawable), FALSE);
@@ -381,9 +382,14 @@ gimp_edit_clear (GimpImage    *image,
 
   gimp_context_get_background (context, &background);
 
+  if (gimp_drawable_has_alpha (drawable))
+    paint_mode = GIMP_ERASE_MODE;
+  else
+    paint_mode = GIMP_NORMAL_MODE;
+
   return gimp_edit_fill_full (image, drawable,
                               &background, NULL,
-                              GIMP_OPACITY_OPAQUE, GIMP_ERASE_MODE,
+                              GIMP_OPACITY_OPAQUE, paint_mode,
                               C_("undo-type", "Clear"));
 }
 
@@ -479,8 +485,8 @@ gimp_edit_fill_full (GimpImage            *image,
       format = gimp_drawable_get_format (drawable);
     }
 
-  dest_buffer = gimp_gegl_buffer_new (GEGL_RECTANGLE (0, 0, width, height),
-                                      format);
+  dest_buffer = gegl_buffer_new (GEGL_RECTANGLE (0, 0, width, height),
+                                 format);
 
   if (pattern)
     {

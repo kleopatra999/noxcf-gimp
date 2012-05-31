@@ -26,7 +26,6 @@
 <!--  The debug-menu is automatically excluded for stable releases  -->
       <menu action="debug-menu" name="Debug">
         <menuitem action="debug-mem-profile" />
-        <menuitem action="debug-benchmark-projection" />
         <menuitem action="debug-show-image-graph" />
         <separator />
         <menuitem action="debug-dump-items" />
@@ -526,6 +525,7 @@
       </menu>
       <separator />
       <menuitem action="filters-color-to-alpha" />
+      <menuitem action="filters-color-reduction" />
       <menuitem action="filters-color-temperature" />
       <placeholder name="Modify" />
     </menu>
@@ -535,10 +535,14 @@
         <menuitem action="tools-rect-select" />
         <menuitem action="tools-ellipse-select" />
         <menuitem action="tools-free-select" />
+	<!--
         <menuitem action="tools-foreground-select" />
+	-->
         <menuitem action="tools-fuzzy-select" />
         <menuitem action="tools-by-color-select" />
+	<!--
         <menuitem action="tools-iscissors" />
+	-->
       </menu>
       <menu action="tools-paint-menu" name="Paint Tools">
         <menuitem action="tools-bucket-fill" />
